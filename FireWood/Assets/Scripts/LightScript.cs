@@ -58,10 +58,12 @@ public class LightScript : Interactable
         woodAmount = Mathf.Min(woodCapacity, woodAmount + 1);
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, CurrentRange);
     }
+#endif
 
     internal bool Covers(Vector2 position)
     {

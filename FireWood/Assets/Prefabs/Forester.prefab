@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flicker: 0.1
-  _currentRange: 5
+  _currentRange: 3
   _lightRange: {fileID: 4215816386660337185}
   distanceThatIsConsideredTarget: 0.6
   _speed: 1

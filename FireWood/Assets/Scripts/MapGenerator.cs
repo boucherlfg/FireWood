@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
+#if UNITY_EDITOR
+using UnityEditor;
 [CustomEditor(typeof(MapGenerator))]
 public class MapGeneratorEditor : Editor
 {
@@ -24,6 +26,7 @@ public class MapGeneratorEditor : Editor
         }
     }
 }
+#endif
 
 public class MapGenerator : MonoBehaviour
 {

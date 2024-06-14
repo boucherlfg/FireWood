@@ -32,15 +32,23 @@ public class PlayerLight : MonoBehaviour
     {
         woodAmount = 0;
     }
-    public float CurrentRange => (1 - Mathf.Exp(-woodAmount / woodCapacity)) * maximumRange / 2;
+    public float CurrentRange 
+    { 
+        get {
+            var debug = (1 - Mathf.Exp(-woodAmount / woodCapacity)) * maximumRange / 2;
+            return debug;
+        }
+    }
     private void Update()
     {
         woodAmount = Mathf.Max(0, woodAmount - Time.deltaTime / lightOutDelay);
         _lightRange.localScale = 2 * CurrentRange * Vector3.one + flicker * Random.value * Vector3.one;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, CurrentRange);
     }
+#endif
 }

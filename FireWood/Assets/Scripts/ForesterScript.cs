@@ -22,12 +22,13 @@ public class ForesterScript : MonoBehaviour
     private float followPlayerSpeedMultiplier = 3;
 
     #region [AI stuff]
-    private ForesterState _state;
+    private ForesterState _state = ForesterState.NextWaypoint;
     private WoodScript _currentEmptyWood;
     private LightScript _currentLight;
 
     private int index = 0;
-    private bool SeesPlayer => Vector2.Distance(transform.position, _player.transform.position) < CurrentRange + _player.CurrentRange && _player.IsLit;
+    private bool SeesPlayer => Vector2.Distance(transform.position, _player.transform.position) < CurrentRange + _player.CurrentRange 
+        && _player.IsLit;
     private WaypointScript CurrentWaypoint
     {
         get
@@ -56,7 +57,7 @@ public class ForesterScript : MonoBehaviour
 
     private void ChangeState(ForesterState state)
     {
-        _state = ForesterState.FollowPlayer;
+        _state = state;
         Changed?.Invoke(_state);
     }
     private void Start()
@@ -101,10 +102,13 @@ public class ForesterScript : MonoBehaviour
             Debug.Log("state : " + _state);
         }
     }
+
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, CurrentRange);
     }
+#endif
     void FollowPlayer()
     {
         if (!SeesPlayer || Lights.Exists(x => x.Covers(_player.transform.position)))

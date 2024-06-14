@@ -46,6 +46,7 @@ public class Landmark : MonoBehaviour
         return boundingRect;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         bounds.ForEach(bound =>
@@ -54,4 +55,5 @@ public class Landmark : MonoBehaviour
             Handles.DrawSolidRectangleWithOutline(rect, new Color(0, 0, 0, 0), Color.red);
         });
     }
+#endif
 }
