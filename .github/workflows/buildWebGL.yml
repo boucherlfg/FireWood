@@ -7,7 +7,7 @@ name: Build Project
 env:
   project_path: FireWood
 on: 
-    pull_request:
+    push:
       branches:
         - main
         # - dev
