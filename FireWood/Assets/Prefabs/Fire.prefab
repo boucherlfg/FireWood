@@ -93,8 +93,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9034757259276391890}
   - component: {fileID: 4731729266556592502}
+  - component: {fileID: 2747427096116372999}
   - component: {fileID: 9150943938591949175}
   - component: {fileID: 2925000210792679748}
+  - component: {fileID: 6816749421483969650}
+  - component: {fileID: 1985344873949700607}
+  - component: {fileID: 956898037540385413}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -172,6 +176,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2747427096116372999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933567061829938200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7382b9c5110ca41a9048cbbe394e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nominalHintEmission: 20
+  hint: {fileID: 7660371277843551908, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
+  woodAmount: 0
+  woodCapacity: 10
+  lightScript: {fileID: 9150943938591949175}
+  timePerLog: 60
 --- !u!114 &9150943938591949175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,15 +206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bba9e1081e5b334baa9214637fd478a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nominalHintEmission: 20
-  hint: {fileID: 1512276794867887358}
-  lightOutDelay: 60
-  woodAmount: 0
-  woodCapacity: 10
-  maximumRange: 15
+  maximumRange: 10
   flicker: 0.07
-  _animator: {fileID: 2923048037916249688}
   _lightRange: {fileID: 731327497549459370}
+  currentFill: 1
+  exclude: 0
 --- !u!61 &2925000210792679748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -238,6 +256,78 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &6816749421483969650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933567061829938200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc26864d80d67041b610e0748c1287e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 9150943938591949175}
+--- !u!114 &1985344873949700607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933567061829938200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59a543b2b287074a9105d7318c13047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2923048037916249688}
+  _light: {fileID: 9150943938591949175}
+--- !u!114 &956898037540385413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933567061829938200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ee560e94b4ca546a27ab3283073330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rules:
+  - state: 0
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2747427096116372999}
+          m_TargetAssemblyTypeName: InteractableLightFuel, Assembly-CSharp
+          m_MethodName: set_ConsumeOverTime
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - state: 3
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2747427096116372999}
+          m_TargetAssemblyTypeName: InteractableLightFuel, Assembly-CSharp
+          m_MethodName: set_ConsumeOverTime
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &7719414638910734734
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +566,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7660371277843551908, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8089742054802078155, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
       propertyPath: m_Name
       value: InteractionHint
@@ -485,11 +579,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
---- !u!198 &1512276794867887358 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7660371277843551908, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
-  m_PrefabInstance: {fileID: 9129839523513170522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9076369901212770545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 235888101833530027, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}

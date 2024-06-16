@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 6365300714229135010}
   - component: {fileID: 3343355174776128595}
   - component: {fileID: 2772536207147166582}
+  - component: {fileID: 3138713107792338574}
   m_Layer: 6
   m_Name: StartCamp
   m_TagString: Untagged
@@ -721,6 +722,26 @@ MonoBehaviour:
     y: -7.99
     width: 10.98
     height: 8.98
+--- !u!114 &3138713107792338574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262447133771377055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003fc86d251d3b54a8e6be51398238f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveToWoodMessage: Go to the woodpile (WASD or Arrows)
+  takeWoodMessage: Take the woodpile (Spacebar)
+  lightFireMessage: Light the fire (WASD or Arrows + Spacebar)
+  tutorialOverMessage: Keep your fire open, or the ghosts will get you. You should
+    go get some firewood.
+  wood: {fileID: 8662157358165200185}
+  fire: {fileID: 1000129276128036984}
+  player: {fileID: 6912139274895623785}
 --- !u!1 &8653636316719148639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,11 +1890,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75817657
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.0328436
+      value: -4.69
       objectReference: {fileID: 0}
     - target: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1912,6 +1933,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
+--- !u!114 &8662157358165200185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8633934037008305099, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
+  m_PrefabInstance: {fileID: 1146112754087741170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90735e43aa48b4b47a2fcfa67f1fa6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8973730582154867332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
@@ -1927,11 +1959,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4824734070090144365, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.87
+      value: -4.72
       objectReference: {fileID: 0}
     - target: {fileID: 4824734070090144365, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 4824734070090144365, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1975,6 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6158446685190473592, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
+    - {fileID: 4410513068806088399, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1984,6 +2017,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4824734070090144365, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
   m_PrefabInstance: {fileID: 5340157877773278493}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6912139274895623785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1581000171347516276, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
+  m_PrefabInstance: {fileID: 5340157877773278493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0e31904e578e8459f216f472cf26e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8295493351056935183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1999,6 +2043,10 @@ PrefabInstance:
     - target: {fileID: 1933567061829938200, guid: 910e5a5a2587faf4db50a600f62acd6d, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747427096116372999, guid: 910e5a5a2587faf4db50a600f62acd6d, type: 3}
+      propertyPath: woodAmount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7719414638910734734, guid: 910e5a5a2587faf4db50a600f62acd6d, type: 3}
       propertyPath: m_Layer
@@ -2057,6 +2105,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 910e5a5a2587faf4db50a600f62acd6d, type: 3}
+--- !u!114 &1000129276128036984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9150943938591949175, guid: 910e5a5a2587faf4db50a600f62acd6d, type: 3}
+  m_PrefabInstance: {fileID: 8295493351056935183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bba9e1081e5b334baa9214637fd478a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1044382783521168605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9034757259276391890, guid: 910e5a5a2587faf4db50a600f62acd6d, type: 3}
