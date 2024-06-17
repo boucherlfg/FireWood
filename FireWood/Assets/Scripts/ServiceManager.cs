@@ -8,6 +8,7 @@ public class ServiceManager : Singleton<ServiceManager>
 
     public T Get<T>(Func<T> generator =  null) where T : class
     {
+        _services.RemoveAll(x => x == null);
         var srv = _services.Find(x => x is T);
         if (srv is null)
         {

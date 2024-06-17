@@ -68,15 +68,4 @@ public static class Ext
         var index = UnityEngine.Random.Range(0, source.Count());
         return source.ElementAt(index);
     }
-
-    public static T DefaultComponent<T>() where T : Component
-    {
-        var t = GameObject.FindObjectOfType<T>();
-        if (!t)
-        {
-            t = new GameObject(typeof(T).Name).AddComponent<T>();
-            GameObject.DontDestroyOnLoad(t.gameObject);
-        }
-        return t;
-    }
 }

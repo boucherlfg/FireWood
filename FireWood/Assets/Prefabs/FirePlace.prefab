@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nominalHintEmission: 20
-  hint: {fileID: 7660371277843551908, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
+  hint: {fileID: 8305267745086105756}
   woodAmount: 0
   woodCapacity: 10
   lightScript: {fileID: 9150943938591949175}
@@ -582,5 +582,10 @@ PrefabInstance:
 --- !u!4 &1894657474953405587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 235888101833530027, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
+  m_PrefabInstance: {fileID: 1805140901327388216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8305267745086105756 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7660371277843551908, guid: 54d2f3af682fe0c479784900ff566ee2, type: 3}
   m_PrefabInstance: {fileID: 1805140901327388216}
   m_PrefabAsset: {fileID: 0}

@@ -23,8 +23,14 @@ public class ActScript : MonoBehaviour
 
         if (intermediate != choice)
         {
-            if (choice) choice.Hint(false);
-            if (intermediate) intermediate.Hint(true);
+            if (choice)
+            {
+                choice.Hint(false);
+            }
+            if (intermediate)
+            {
+                intermediate.Hint(true);
+            }
             choice = intermediate;
         }
 

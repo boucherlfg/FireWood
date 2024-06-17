@@ -12,4 +12,10 @@ public class PlayerScript : MonoBehaviour
     public LightScript Light => _light;
     public PlayerLightFuel LightFuel => _lightFuel;
     public ActScript ActScript => _actScript;
+
+    private void Start()
+    {
+        var gameState = ServiceManager.Instance.Get<GameState>();
+        gameState.Wood.Value = 0;
+    }
 }

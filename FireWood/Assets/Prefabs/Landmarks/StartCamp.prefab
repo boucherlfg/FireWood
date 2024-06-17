@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 3343355174776128595}
   - component: {fileID: 2772536207147166582}
   - component: {fileID: 3138713107792338574}
+  - component: {fileID: 3822226846540401868}
   m_Layer: 6
   m_Name: StartCamp
   m_TagString: Untagged
@@ -734,14 +735,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003fc86d251d3b54a8e6be51398238f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveToWoodMessage: Go to the woodpile (WASD or Arrows)
-  takeWoodMessage: Take the woodpile (Spacebar)
-  lightFireMessage: Light the fire (WASD or Arrows + Spacebar)
-  tutorialOverMessage: Keep your fire open, or the ghosts will get you. You should
-    go get some firewood.
+  moveToWoodMessage: {fileID: 5215795543683196646, guid: 862be2305e715374f82b750aa4dd5b6c, type: 3}
+  takeWoodMessage: {fileID: 5215795543683196646, guid: 9ce5527b6c5c0b84c81ee377da803bbf, type: 3}
+  lightFireMessage: {fileID: 5215795543683196646, guid: bc4b10caa1ef5d84e814d423698fa395, type: 3}
+  tutorialOverMessage: {fileID: 5215795543683196646, guid: d6a7bbdad8d9809439cddf3fce3c66a6, type: 3}
   wood: {fileID: 8662157358165200185}
   fire: {fileID: 1000129276128036984}
   player: {fileID: 6912139274895623785}
+--- !u!114 &3822226846540401868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262447133771377055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c272ef73ae3e24ea2684ea0b042872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bufferTime: 10
 --- !u!1 &8653636316719148639
 GameObject:
   m_ObjectHideFlags: 0

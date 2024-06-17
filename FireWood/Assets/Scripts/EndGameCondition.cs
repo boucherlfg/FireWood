@@ -7,6 +7,15 @@ using UnityEngine;
 
 public class EndGameCondition : MonoBehaviour
 {
+    private PlayerScript player;
+    public enum EndGameState
+    {
+        Safe,
+        Danger,
+        Dead,
+        End
+    }
+    private EndGameState state;
     [SerializeField]
     private float bufferTime = 10;
 
@@ -14,21 +23,38 @@ public class EndGameCondition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var player = ServiceManager.Instance.Get(Ext.DefaultComponent<PlayerScript>);
+        switch (state)
+        {
+            case EndGameState.Safe:
+                Safe();
+                break;
+            case EndGameState.Danger:
+                Danger();
+                break;
+            case EndGameState.Dead:
+                Dead();
+                break;
+        }
+    }
 
-        if (!player.Light.IsLit)
-        {
-            counter += Time.deltaTime;
-        }
-        else
-        {
-            counter = 0;
-        }
-
-        if (counter > bufferTime)
-        {
-            Debug.Log("GAME OVER");
-            ServiceManager.Instance.Get<OnPlayerLost>().Invoke();
-        }
+    void Safe()
+    {
+        player = player ? player : FindObjectOfType<PlayerScript>();
+        counter = 0;
+        if (!player.Light.IsLit) state = EndGameState.Danger;
+    }
+    void Danger()
+    {
+        player = player ? player : FindObjectOfType<PlayerScript>();
+        counter += Time.deltaTime;
+        if (player.Light.IsLit) state = EndGameState.Safe;
+        else if (counter >= bufferTime) state = EndGameState.Dead;
+    }
+    void Dead()
+    {
+        player = player ? player : FindObjectOfType<PlayerScript>();
+        player.gameObject.SetActive(false);
+        ServiceManager.Instance.Get<OnEndOfGame>().Invoke();
+        state = EndGameState.End;
     }
 }
