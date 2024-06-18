@@ -13,12 +13,13 @@ public abstract class AnimationScript : MonoBehaviour
                         WalkDown = nameof(WalkDown),
                         WalkRight = nameof(WalkRight);
 
+    [SerializeField]
     private Animator _animator;
     private Vector2 lastVelocity;
     protected abstract Vector2 Velocity { get; }
     protected virtual void Start()
     {
-        _animator = GetComponent<Animator>();
+        if(!_animator) _animator = GetComponent<Animator>();
     }
     // Update is called once per frame
     protected virtual void Update()
