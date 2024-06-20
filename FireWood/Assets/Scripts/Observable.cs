@@ -3,7 +3,8 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class Observable<T>
 {
-    public event Action Changed;
+    public delegate void ChangeDelegate(T oldValue, T newValue);
+    public event ChangeDelegate Changed;
     private T _value;
 
     public T Value
@@ -11,8 +12,20 @@ public class Observable<T>
         get => _value;
         set
         {
+            var oldValue = _value;
             _value = value;
-            Changed?.Invoke();
+            if (_value == null ^ oldValue == null)
+            {
+                Changed?.Invoke(oldValue, _value);
+            }
+            else if(_value != null && !_value.Equals(oldValue)) 
+            {
+                Changed?.Invoke(oldValue, _value);
+            }
+            else if (oldValue != null && !oldValue.Equals(_value))
+            {
+                Changed?.Invoke(oldValue, _value);
+            }
         }
     }
 

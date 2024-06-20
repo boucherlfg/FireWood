@@ -20,7 +20,7 @@ public class TutorialElement : MonoBehaviour
     }
     private void OnDestroy()
     {
-        tutorialChanged.Unsubscribe(OnTutorialChanged);
+        tutorialChanged?.Unsubscribe(OnTutorialChanged);
     }
 
     private void OnTutorialChanged(StartGameTutorial.TutorialState state) 

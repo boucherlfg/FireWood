@@ -11,10 +11,24 @@ public class GhostScript : MonoBehaviour
     private Coroutine coroutine;
     private PlayerScript player;
     private ForesterScript forester;
+
+    private List<LightScript> lights = new();
     private void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
         baseAlpha = _renderer.color.a;
+        LightScript.Changed += HandleLight;
+    }
+
+    private void OnDestroy()
+    {
+        LightScript.Changed -= HandleLight;
+    }
+
+    void HandleLight(LightScript light, bool activated)
+    {
+        if (activated) lights.Add(light);
+        else lights.Remove(light);
     }
     // Update is called once per frame
     void Update()
@@ -22,7 +36,7 @@ public class GhostScript : MonoBehaviour
         player = player ? player : FindObjectOfType<PlayerScript>();
         forester = forester ? forester : FindObjectOfType<ForesterScript>();
 
-        var isLit = LightScript.lights.Any(x => Vector2.Distance(transform.position, x.transform.position) < x.CurrentRange);
+        var isLit = lights.Any(x => Vector2.Distance(transform.position, x.transform.position) < x.CurrentRange);
         if (Vector2.Distance(player.transform.position, transform.position) < player.Light.CurrentRange || isLit
          || Vector2.Distance(forester.transform.position, transform.position) < forester.CurrentRange)
         {

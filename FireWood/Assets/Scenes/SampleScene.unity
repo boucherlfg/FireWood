@@ -181,8 +181,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: baac46fb49ad4184badac96844769e5f, type: 2}
+  m_sharedMaterial: {fileID: 1102776548014074677, guid: baac46fb49ad4184badac96844769e5f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.55
+  m_fontSize: 28.5
   m_fontSizeBase: 29.85
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -330,7 +330,7 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.0042283763, b: 0.13207549, a: 0.9882353}
+  m_Color: {r: 0, g: 0.0042283763, b: 0.13207549, a: 0.9490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -778,8 +778,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: G A M E  O V E R
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: baac46fb49ad4184badac96844769e5f, type: 2}
+  m_sharedMaterial: {fileID: 1102776548014074677, guid: baac46fb49ad4184badac96844769e5f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1118188490
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1073741824
   data:
-    dataString: UEsDBBQAAAgIAACYn+s3mH4+vgIAAPcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1v4jAQ/SvI5wUllFLY2y5Quoe2qHTVw9KDSSbEwtiRPwq04r/vjJOQwGqlSrhv3njemxnniwllC0icNnMj0kedAvveYXRm3zpN8AEOfKPVUnxCzXkTqcuJxAPnhTuhEY8pzeodOCOSH2ojiRwh6JXItNnN0g1MtHUW4YxLCxgy2lG2Quirww740x1TyhFP/Ts6feJpHHVOeExAOTAt6rBixjWx5HmVSL4rICXRDX0c90Z1QjzujQJXoaeKFvX6VERLKWwlibljESy/8CMZTgVHe0EDuc1BbHJHUtuJz1lmwVXeDT9OhcEulTeyn7ps3Y7bbSntg0tPNYaDIKi88/GfcDcO4czo3UNdNo6ohMtFskWBCbeu1do2PL3U7dWeyy1fS3jLQT3pudFepRh0xlOqt9CfNv+enU1ySLYNXkqtwbquL5qW16Os50MmTsH9YemgOBuJeoMG/W3BLqUOja8qUaRCwnqAwbH9QkNheWxlC1FSifmvfNPesipwL4x1GLqkE3eBE4IUVAJV47tEUCRvrb2hu9g9HmhyiXcTbRSYdoUCFJfuuMAb3fUKXMX+n3XP6cFV6qpY/Y6uUgLc8KPoKrTQ+/O0jZdgwzbXpz/vNASb6/0j2PzZOylUq9sUeMIGT7RS5ea2rdZpS28ynrTSHBycNzDljodqKAc3LG2nYgtDhvJS0jIHA0ERGqC/d2pwzrGuDDB70qgMwYvfIH/jRXr5RNjtetAfDm84xDdxkt2NuuNklK2HsB5ECPfhloU3JBS2m8tF2a9qSrhdqvGi8L3Un8PO3PAiPNrU8P1cfO60bZhCZXqZGAD1XN5wNgsGi+CnJZ2lAm0uwTmhwl6yrxWTOtlCumoSVqGzs4Mz/AItxId2hKzYJHwAV4zg86PE3f0QsKfqq7MsvAwkzg7SVyFhxwsKRSd2+gtQSwMEFAAACAgAAJif6wrPFqFrAAAAdwAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw1TPUM9JRUEovSizIKAYKGII4pZkpIHa0kmmSiZGZmXFiqqGxYXKauYWuZbJFWpJZapKJAVDYKNVUKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAACYn+s3mH4+vgIAAPcFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+sKzxahawAAAHcAAAAJACQAAAAAAAAAAAAAAAsDAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAwQMAAAAA
+    dataString: UEsDBBQAAAgIAACYn+t6BJjbvQIAAPcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1vGjEQ/SvI5wbtEkKgtxYS0kMSFFLlUHIwu7OshbFX/giQiP/eGe8nVJUi4bx543lvZrxfTChbQOK0mRuRPuoU2PceozP71muDD3DgG62W4hNqzptIXU4kHjgv3AmNeExpVu/AGZH8UBtJ5AhBr0Smze4u3cBUW2cRzri0gCGjHWUrhL567IA/VxNKOeJpcEunTzxNot4JjwkoB6ZDjStmHFfEkudVIvmugJREt/TJTX/cJMT9ceAq9FTRov6Aimgpha0kMXcsguUXfiTDqeBoL2igkjmITe5IajfxOcssuMq74ceZMNil8kb2U5et23G7LaV9cOmpxmgYBJV3Pv4TvopDODN691CXjSMq4XKRbFFgwq3rtLYLz851e7XncsvXEt5yUE96brRXKQad8ZTqLQxm7b+Ns2kOybbFS6k1WNf1RdvyepT1IMnEKbg/LB0UjZGoP2zR3xbsUurQ+KoSRSokrAcYHNsvNBSWx1a2ECWVmP/KN90tqwL3wliHoXM6cRc4IUhBJVA1PqyWInlr7Q3dxe7xQJNLvJtqo8B0KxSguHTHBd7oLlfgIvb/rHtOD65SV8Xqd3SREuCWH0UXoYXeN9M2XoIN21yf/rzTEGyu949g82fvpFCdblPgCRs81UqVm9u1Wqctvcl40klzcHDewIw7HqqhHNywtJuKLQwZyktJyxwMBEVogP7eqcE5x7oywOxJozIEz36D/I0X6fkTYTfr4WA0uuYQX8dJdju+miTjbD2C9TBCeAA3LLwhobDdXC7KflVTwu1SrReF76X+HPbmhhfh0aaG7+fic6dtyxQq08vEAKjn8obGLBgsgp+W9C4VaHMJzgkV9pJ9rZjUyRbSVZuwCp29OzjDz9BCfGhHyIpNwwdwxQhuHiXu7oeAPVVfNbLwMpA4O0hfhYQdLygUndjpL1BLAwQUAAAICAAAmJ/rCs8WoWsAAAB3AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDVM9Qz0lFQSi9KLMgoBgoYgjilmSkgdrSSaZKJkZmZcWKqobFhcpq5ha5lskVakllqkokBUNgo1VQpFqi+pLIg1S8xNxWiJyCxJCMtMy8lMy9dz70oM8UdZLRSbC0AUEsBAi0AFAAACAgAAJif63oEmNu9AgAA9wUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJif6wrPFqFrAAAAdwAAAAkAJAAAAAAAAAAAAAAACgMAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAADAAwAAAAA=
     file_cachedStartup: {fileID: 0}
     cacheStartup: 0
   showNavGraphs: 0

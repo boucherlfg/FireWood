@@ -7,6 +7,8 @@ using UnityEngine;
 public class ForesterScript : MonoBehaviour
 {
     [SerializeField]
+    private bool debug = false;
+    [SerializeField]
     private LightScript _light;
     public float CurrentRange => _light.CurrentRange;
     public float distanceThatIsConsideredTarget = 0.6f;
@@ -90,9 +92,9 @@ public class ForesterScript : MonoBehaviour
                 break;
         }
 
-        if (_state != state)
+        if (_state != state && debug)
         {
-            Debug.Log("state : " + _state);
+            Debug.Log("forester state : " + _state);
         }
     }
 

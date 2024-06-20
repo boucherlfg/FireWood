@@ -3,6 +3,8 @@ using UnityEngine;
 public class InteractableLightFuel : Interactable
 {
     [SerializeField]
+    private GameObject refuelParticle;
+    [SerializeField]
     private float woodAmount;
     [SerializeField]
     private float woodCapacity = 1;
@@ -22,6 +24,8 @@ public class InteractableLightFuel : Interactable
         var gameState = ServiceManager.Instance.Get<GameState>();
         if (gameState.Wood <= 0) return;
         if (woodAmount >= woodCapacity) return;
+
+        Instantiate(refuelParticle, transform.position, Quaternion.identity);
         gameState.Wood.Value--;
         woodAmount = Mathf.Min(woodCapacity, woodAmount + 1);
     }

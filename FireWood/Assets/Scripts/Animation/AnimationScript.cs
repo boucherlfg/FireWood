@@ -15,7 +15,9 @@ public abstract class AnimationScript : MonoBehaviour
 
     [SerializeField]
     private Animator _animator;
+    public Animator Animator => _animator;
     private Vector2 lastVelocity;
+    public Vector2 LastVelocity => lastVelocity;
     protected abstract Vector2 Velocity { get; }
     protected virtual void Start()
     {

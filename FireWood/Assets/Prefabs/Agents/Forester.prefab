@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266c2c55ffb2d0d45be1079fdae5ca14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   _light: {fileID: 1787812862147072727}
   distanceThatIsConsideredTarget: 0.6
   _speed: 1
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  radius: 0.5
+  radius: 2
   height: 1
   canMove: 1
   maxSpeed: 2
@@ -278,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4390e7f785b0e824791e59b8fc8cdb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!114 &583427369873587259
 MonoBehaviour:
   m_ObjectHideFlags: 0

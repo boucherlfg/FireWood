@@ -3,7 +3,7 @@ guid: 5a0220619e208634daec371787b91576
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -26848,7 +26848,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_1272
+      name: wood
       rect:
         serializedVersion: 2
         x: 901
@@ -36235,7 +36235,6 @@ TextureImporter:
       roguelikeSheet_transparent_127: 1748212151
       roguelikeSheet_transparent_1270: -208245499
       roguelikeSheet_transparent_1271: 505040190
-      roguelikeSheet_transparent_1272: 1625044372
       roguelikeSheet_transparent_1273: -409749746
       roguelikeSheet_transparent_1274: -324742153
       roguelikeSheet_transparent_1275: -2090053315
@@ -37633,6 +37632,7 @@ TextureImporter:
       roguelikeSheet_transparent_997: -1266684602
       roguelikeSheet_transparent_998: 20029224
       roguelikeSheet_transparent_999: -2137432115
+      wood: 1625044372
       woodPile: -1886523328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

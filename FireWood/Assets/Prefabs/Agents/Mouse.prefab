@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2253625499126914875}
   - component: {fileID: 5154114404669757154}
   - component: {fileID: 2979268139538859541}
+  - component: {fileID: 8550282349352529946}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -106,6 +107,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8550282349352529946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129633788987696801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9733102b7645b8d418c6d2a4144b62f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2979268139538859541}
+  mouseScript: {fileID: -5420499493442931064}
+  aiPath: {fileID: 6296209116408588672}
 --- !u!1 &6297081259211241688
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,9 +131,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3957904465261857913}
-  - component: {fileID: 8822760218074990235}
   - component: {fileID: 5624858170492376376}
   - component: {fileID: 6296209116408588672}
+  - component: {fileID: -5420499493442931064}
   m_Layer: 6
   m_Name: Mouse
   m_TagString: Untagged
@@ -141,19 +157,6 @@ Transform:
   - {fileID: 2253625499126914875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8822760218074990235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297081259211241688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4390e7f785b0e824791e59b8fc8cdb5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 2979268139538859541}
 --- !u!114 &5624858170492376376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,11 +198,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
-  radius: 0.5
+  radius: 1.5
   height: 1
   canMove: 1
   maxSpeed: 2
-  gravity: {x: NaN, y: NaN, z: NaN}
+  gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -231,3 +234,20 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   preventMovingBackwards: 0
   constrainInsideGraph: 0
+--- !u!114 &-5420499493442931064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297081259211241688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c2653879d6a2048a03e30da83ea71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+  minimumDistance: 2
+  comfortableDistance: 3
+  maximumDistance: 10
+  speed: 3

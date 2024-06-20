@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,7 +6,8 @@ using UnityEngine;
 
 public class WoodScript : Interactable
 {
-    public static List<WoodScript> woodPiles = new();
+    public delegate void WoodDelegate(WoodScript target, bool activated);
+    public static event WoodDelegate Changed;
     public GameObject lootParticle;
 
     public void Refill()
@@ -14,7 +16,11 @@ public class WoodScript : Interactable
     }
     private void Start()
     {
-        woodPiles.Add(this);
+        Changed?.Invoke(this, true);
+    }
+    private void OnDestroy()
+    {
+        Changed?.Invoke(this, false);
     }
 
     public override void Interact()

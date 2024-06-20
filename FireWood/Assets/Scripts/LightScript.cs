@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LightScript : MonoBehaviour
 {
-    public static List<LightScript> lights = new();
+    public delegate void LightDelegate(LightScript light, bool activated);
+    public static event LightDelegate Changed;
     [SerializeField]
     private float maximumRange = 5;
     [SerializeField]
@@ -19,16 +20,15 @@ public class LightScript : MonoBehaviour
 
     public bool IsLit => CurrentRange > 0.000001;
 
-
     public float CurrentRange => currentFill * maximumRange / 2;
 
     protected void Start()
     {
-        lights.Add(this);
+        Changed?.Invoke(this, true);
     }
     private void OnDestroy()
     {
-        lights.Remove(this);
+        Changed?.Invoke(this, false);
     }
     public void Update()
     {

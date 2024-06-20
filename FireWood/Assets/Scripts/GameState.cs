@@ -12,7 +12,7 @@ public class GameState
     public GameState()
     {
         Wood = new(0);
-        Wood.Changed += Invoke;
+        Wood.Changed += (a, b) => Invoke();
     }
 
     private void Invoke() => Changed?.Invoke();
