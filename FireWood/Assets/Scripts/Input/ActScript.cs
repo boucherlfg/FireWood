@@ -3,10 +3,27 @@ using UnityEngine;
 
 public class ActScript : MonoBehaviour
 {
+    private InputSystem input;
     public float Range => interactionRange;
     [SerializeField]
     private float interactionRange = 2;
     private Interactable choice;
+
+    private void Start()
+    {
+        input = ServiceManager.Instance.Get<InputSystem>();
+        input.Acted += Input_Acted;
+    }
+    private void OnDestroy()
+    {
+        input.Acted -= Input_Acted;
+    }
+
+    private void Input_Acted()
+    {
+        if (choice) choice.Interact();
+    }
+
     private void Update()
     {
         var hits = Physics2D.OverlapCircleAll(transform.position, interactionRange).Where(x => x.GetComponent<Interactable>());
@@ -32,11 +49,6 @@ public class ActScript : MonoBehaviour
                 intermediate.Hint(true);
             }
             choice = intermediate;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space)) 
-        {
-            if (choice) choice.Interact();
         }
     }
 }

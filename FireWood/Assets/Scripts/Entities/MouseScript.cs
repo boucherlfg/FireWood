@@ -83,6 +83,10 @@ public class MouseScript : MonoBehaviour
         aiPath.destination = startPosition;
         aiPath.maxSpeed = speed;
 
-        if (DistanceFromStart < 1) state = MouseState.Disappear;
+        if (DistanceFromStart < 1)
+        {
+            aiPath.destination = transform.position;
+            state = MouseState.Disappear;
+        }
     }
 }

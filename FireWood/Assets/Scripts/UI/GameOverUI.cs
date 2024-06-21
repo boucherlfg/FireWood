@@ -8,17 +8,23 @@ public class GameOverUI : MonoBehaviour
     private bool isGameOver;
     public GameObject menu;
     private OnEndOfGame endOfGame;
+    private InputSystem input;
     private void Start()
     {
         endOfGame = ServiceManager.Instance.Get<OnEndOfGame>();
         endOfGame.Subscribe(HandleEndOfGame);
+        input = ServiceManager.Instance.Get<InputSystem>();
+        input.Acted += Input_Acted;
+
     }
-    private void Update()
+    private void OnDestroy()
+    {
+        input.Acted -= Input_Acted;
+    }
+
+    private void Input_Acted()
     {
         if (!isGameOver) return;
-
-        if (!Input.GetKey(KeyCode.Space)) return;
-
         SceneManager.LoadScene(gameObject.scene.name);
     }
 

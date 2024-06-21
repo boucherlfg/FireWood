@@ -16,7 +16,9 @@ public class ForesterScript : MonoBehaviour
     private float _speed = 1;
     [SerializeField]
     private float followPlayerSpeedMultiplier = 3;
-
+    [SerializeField]
+    private float pauseBetweenTasks = 1;
+    private float counter;
     #region [AI stuff]
     private ForesterState _state = ForesterState.NextWaypoint;
     private WoodScript _currentEmptyWood;
@@ -122,6 +124,10 @@ public class ForesterScript : MonoBehaviour
         var emptyWood = Woods.FindAll(x => !x.gameObject.activeSelf && x.transform.parent == CurrentWaypoint.transform.parent);
         if (emptyWood.Count <= 0)
         {
+            counter += Time.deltaTime;
+            if (counter < pauseBetweenTasks) return;
+            counter = 0;
+
             ChangeState(ForesterState.NextWaypoint);
             index = Enumerable.Range(0, Waypoints.Count).Where(x => x != index).GetRandom();
             return;
@@ -137,6 +143,11 @@ public class ForesterScript : MonoBehaviour
         // si on est assez proche du target wood pile
         if (Vector2.Distance(transform.position, _currentEmptyWood.transform.position) < distanceThatIsConsideredTarget)
         {
+            _aiPath.destination = transform.position;
+            counter += Time.deltaTime;
+            if (counter < pauseBetweenTasks) return;
+            counter = 0;
+
             _currentEmptyWood.Refill();
             _currentEmptyWood = null; 
             ChangeState(ForesterState.NextWaypoint);
@@ -154,7 +165,10 @@ public class ForesterScript : MonoBehaviour
         var lights = AllOpenLightsInZone;
         if (lights.Count <= 0)
         {
-            Debug.Log("waypoint : " + CurrentWaypoint.name);
+            _aiPath.destination = transform.position;
+            counter += Time.deltaTime;
+            if (counter < pauseBetweenTasks) return;
+            counter = 0;
             ChangeState(ForesterState.RefillWood);
             return;
         }
@@ -180,6 +194,11 @@ public class ForesterScript : MonoBehaviour
     {
         if (Vector2.Distance(CurrentWaypoint.transform.position, transform.position) < distanceThatIsConsideredTarget)
         {
+            _aiPath.destination = transform.position;
+            counter += Time.deltaTime;
+            if (counter < pauseBetweenTasks) return;
+            counter = 0;
+
             ChangeState(ForesterState.Extinguish);
             return;
         }
