@@ -37,7 +37,7 @@ public class PauseUI : MonoBehaviour
         lighting.value = gameState.Lighting.Value;
     }
 
-    private void HandleResume()
+    public void HandleResume()
     {
         menu.SetActive(false);
         Time.timeScale = 1;

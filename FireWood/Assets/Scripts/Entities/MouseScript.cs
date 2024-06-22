@@ -16,6 +16,9 @@ public class MouseScript : MonoBehaviour
     }
 
     [SerializeField]
+    private float timeBeforeDisappearing = 30f;
+    private float disappearCounter;
+    [SerializeField]
     private float minimumDistance = 2;
     [SerializeField]
     private float comfortableDistance = 3;
@@ -43,6 +46,10 @@ public class MouseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (disappearCounter < timeBeforeDisappearing)
+        {
+            this.state = MouseState.Disappear;
+        }
         player = player ? player : FindObjectOfType<PlayerScript>();
 
         var state = this.state;
@@ -71,7 +78,7 @@ public class MouseScript : MonoBehaviour
 
     void Wait()
     {
-
+        disappearCounter += Time.deltaTime;
         aiPath.destination = transform.position;
         aiPath.maxSpeed = 0;
         if (DistanceFromPlayer < minimumDistance) state = MouseState.Flee;
@@ -80,6 +87,7 @@ public class MouseScript : MonoBehaviour
 
     void Flee()
     {
+        disappearCounter += Time.deltaTime;
         aiPath.destination = startPosition;
         aiPath.maxSpeed = speed;
 

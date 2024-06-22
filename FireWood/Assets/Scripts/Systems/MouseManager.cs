@@ -15,6 +15,7 @@ public class MouseManager : MonoBehaviour
     private PlayerScript player;
     private WoodScript wood;
     private GameState gameState;
+    private float woodActiveCounter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +35,18 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wood && wood.gameObject.activeSelf) return;
         if (instance) return;
+
+        // if user didn't find wood, give them another chance
+        woodActiveCounter += Time.deltaTime;
+        if (woodActiveCounter > timeBeforeHelp)
+        {
+            woodActiveCounter = 0;
+            wood = null;
+        }
+
+        if (wood && wood.gameObject.activeSelf) return;
+
         counter += Time.deltaTime;
         if (counter > timeBeforeHelp)
         {
