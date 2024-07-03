@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InteractableLightFuel : Interactable
 {
+    private Thunderstorm storm;
     [SerializeField]
     private GameObject refuelParticle;
     [SerializeField]
@@ -11,6 +12,8 @@ public class InteractableLightFuel : Interactable
     [SerializeField]
     private LightScript lightScript;
 
+    private float thunderstormMultiplier = 1;
+
     private bool consumeOverTime = false;
     public bool ConsumeOverTime
     {
@@ -19,6 +22,24 @@ public class InteractableLightFuel : Interactable
     }
     [SerializeField]
     private float timePerLog = 60;
+    
+    private void Start()
+    {
+        storm = FindObjectOfType<Thunderstorm>();
+        ServiceManager.Instance.Get<OnStormChangedEvent>().Subscribe(HandleStormChanged);
+    }
+   
+    private void OnDestroy()
+    {
+        ServiceManager.Instance.Get<OnStormChangedEvent>().Unsubscribe(HandleStormChanged);
+    }
+   
+    private void Update()
+    {
+        woodAmount = Mathf.Max(0, woodAmount - thunderstormMultiplier * Time.deltaTime / timePerLog);
+        lightScript.SetRange01((1 - Mathf.Exp(-4*woodAmount / woodCapacity)));
+    }
+
     public override void Interact()
     {
         var gameState = ServiceManager.Instance.Get<GameState>();
@@ -30,10 +51,14 @@ public class InteractableLightFuel : Interactable
         woodAmount = Mathf.Min(woodCapacity, woodAmount + 1);
     }
 
-    private void Update()
+    private void HandleStormChanged(Thunderstorm.StormState state)
     {
-        woodAmount = Mathf.Max(0, woodAmount - Time.deltaTime / timePerLog);
-        lightScript.SetRange01((1 - Mathf.Exp(-4*woodAmount / woodCapacity)));
+        thunderstormMultiplier = state switch
+        {
+            Thunderstorm.StormState.Ingoing => storm.thunderStormMultiplier,
+            _ => 1,
+        };
     }
+   
     public void Extinguish() => woodAmount = 0;
 }
