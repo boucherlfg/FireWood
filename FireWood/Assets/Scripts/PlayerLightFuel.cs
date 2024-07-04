@@ -53,9 +53,9 @@ public class PlayerLightFuel : MonoBehaviour
         _light.SetRange01((1 - Mathf.Exp(-4 * woodAmount / woodCapacity)));
     }
 
-    private void HandleStormChanged(Thunderstorm.StormState state)
+    private void HandleStormChanged(StormChangedArgs args)
     {
-        thunderstormMultiplier = state switch
+        thunderstormMultiplier = args.newState switch
         {
             Thunderstorm.StormState.Ingoing => storm.thunderStormMultiplier,
             _ => 1,

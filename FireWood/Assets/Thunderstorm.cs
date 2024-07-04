@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Thunderstorm : MonoBehaviour
 {
-    public enum StormState { First = 0, Ingoing = 1, Peace = 2 };
+    public enum StormState { First = 0, Ingoing = 1, Peace = 2, Transition = 3 };
 
+    private StormState lastState;
     private StormState state = StormState.First;
     public float timeBeforeFirstStorm = 60;
     public float intervalBetweenStorms = 30;
     public float stormDuration = 10;
+    public float transitionDuration = 3;
     public float thunderStormMultiplier = 2;
 
     private float counter = 0;
-
+    private void OnValidate()
+    {
+        transitionDuration = Mathf.Min(transitionDuration, Mathf.Min(timeBeforeFirstStorm, intervalBetweenStorms, stormDuration));
+    }
     // Update is called once per frame
     void Update()
     {
@@ -22,13 +27,17 @@ public class Thunderstorm : MonoBehaviour
         switch (state)
         {
             case StormState.First:
-                Transition(timeBeforeFirstStorm, StormState.Ingoing);
+                Transition(timeBeforeFirstStorm, StormState.Transition);
                 break;
             case StormState.Ingoing:
-                Transition(stormDuration, StormState.Peace);
+                Transition(stormDuration, StormState.Transition);
+                break;
+            case StormState.Transition:
+                if ((lastState & (StormState)1) == 0) Transition(transitionDuration, StormState.Ingoing);
+                else if (lastState == StormState.Ingoing) Transition(transitionDuration, StormState.Peace);
                 break;
             case StormState.Peace:
-                Transition(intervalBetweenStorms, StormState.Ingoing);
+                Transition(intervalBetweenStorms, StormState.Transition);
                 break;
         }
     }
@@ -36,12 +45,12 @@ public class Thunderstorm : MonoBehaviour
     {
         if (counter < time) return;
         counter = 0;
-        var oldState = state;
+        lastState = state;
         state = nextState;
-        if (state != oldState)
+        if (state != lastState)
         {
             Debug.Log("Thunderstorm : " + state);
-            ServiceManager.Instance.Get<OnStormChangedEvent>().Invoke(state);
+            ServiceManager.Instance.Get<OnStormChangedEvent>().Invoke(new() { lastState = lastState, newState = state });
         }
     }
 }

@@ -51,9 +51,9 @@ public class InteractableLightFuel : Interactable
         woodAmount = Mathf.Min(woodCapacity, woodAmount + 1);
     }
 
-    private void HandleStormChanged(Thunderstorm.StormState state)
+    private void HandleStormChanged(StormChangedArgs args)
     {
-        thunderstormMultiplier = state switch
+        thunderstormMultiplier = args.newState switch
         {
             Thunderstorm.StormState.Ingoing => storm.thunderStormMultiplier,
             _ => 1,

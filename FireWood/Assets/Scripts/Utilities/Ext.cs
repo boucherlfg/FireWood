@@ -51,12 +51,26 @@ public static class Ext
         }
     }
 
+    /// <summary>
+    /// use reflection to get the value of a field
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="origin"></param>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public static T GetValue<T>(this object origin, string name)
     {
         var flag = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance;
         return (T)origin.GetType().GetField(name, flag).GetValue(origin);
     }
 
+    /// <summary>
+    /// use reflection to set the value of a field
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="origin"></param>
+    /// <param name="name"></param>
+    /// <param name="value"></param>
     public static void SetValue<T>(this object origin, string name, T value)
     {
         var flag = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance;

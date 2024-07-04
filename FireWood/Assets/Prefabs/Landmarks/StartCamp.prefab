@@ -2299,6 +2299,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1725908507897518893, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: stormDuration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725908507897518893, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: transitionDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725908507897518893, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: timeBeforeFirstStorm
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725908507897518893, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: intervalBetweenStorms
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725908507897518893, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: thunderStormMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6638721148861281188, guid: 881d0d769890dba469adf2356866e242, type: 3}
       propertyPath: m_Name
       value: Thunderstorm

@@ -122,6 +122,104 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &55441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 519420032}
+    m_Modifications:
+    - target: {fileID: 3902208585069610521, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902208585069610521, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 216554167
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216566077701224117, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_Name
+      value: Rain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216566077701224117, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.911739
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.507698
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.607605
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.98490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.73345786
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.72660017
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+--- !u!4 &55442 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7488172763515874989, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+  m_PrefabInstance: {fileID: 55441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &112049301
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +892,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338484807}
   m_CullTransparentMesh: 1
+--- !u!198 &401304990 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8093796190741500255, guid: 20ae204ad77a631478c2292328e18a25, type: 3}
+  m_PrefabInstance: {fileID: 55441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &492273674
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 497295075}
   - component: {fileID: 497295076}
+  - component: {fileID: 497295077}
   m_Layer: 0
   m_Name: Darkness
   m_TagString: Untagged
@@ -942,6 +1046,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &497295077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497295074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b400eb4357ce54f916da73fd92ed38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1199,7 @@ Transform:
   - {fileID: 2102231062}
   - {fileID: 1581700983}
   - {fileID: 1650884121}
+  - {fileID: 55442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -3648,7 +3765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1073741824
   data:
-    dataString: UEsDBBQAAAgIAACYn+uAImCswgIAAPwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1v4jAQ/SvI5wUFSmm7t12gdA9tUemqh6UHE0+IhbEjfxRoxX/fGSchgdVKSBnezHjemxn7i0ntCki9sTMrxaMRwL53GNnsW6dxPsCer41eyE+oY96k8DkF8Rjzwr00iPcpzZkteCvTH3qtKDhBMGiZGbudijWMjfMO4YwrB+iyxlO2Ruirw/b46d5RygGtwQ1Zn2jdJZ0jmiloD7YJ7feuq9DuIIk2BZexQaeKbwsQRLyVMhj2bqukfoJ2DNYorIpLegOqZJSSruLF/KGIul/4gVQLyVFjJEKSc5Dr3BPfduJzljnwVQMsP0ykxVaVJ7KfpuzflrtNye2Dq0A1RsNIqDzz8R93tx/dmTXbh7psP6ESPpfpBgmm3PlWf9vw5Jx30DuuNnyl4C0H/WRm1gQt0OltoNTgYDBp/p6UjXNINw1eUq3Bum4omp7X86ynSSKOUf1+4aE4CUl6wwb97cAtlImNryqRp0LijoDFsf1CQXGDXCULUWKJ+a983V61ynEvrfPoOg+n2DlOCAToFKrGdylAE72VCZbOYvdo0OTS4MfGarDtCgVorvxhjif6yxW48P0/657TravYVb76Ml2kRLiJT5IL19zsTtO2QYGL21xbf95pCC43u0dw+XPwSupWt8nxhA0eG63LzW1LrdMWwWY8baV52PtgYcI9j9WQDm6YaKdiC2OGDkrRMkcBkREKoN87NTjnWFdFmD0ZZIbg2TfSXwcpzq8Iu14NB6PRFYf+VT/Nbm67d+ltthrBapggPIBrFu+Q1NhuruZlv6op4XbpRovG+1K/iZ2Z5UW8tMLy3Ux+bo1rIqXOzCK1APq5POEkFiwWwadFTIVEmQvwXuq4l+xryZRJNyCWTcIydna695afoYX8MJ6QJRvHV3DJCD5dStzdDwk7qr480cLDQOHsQLxKBVtekCs5suNfUEsDBBQAAAgIAACYn+sKzxahawAAAHcAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNUz1DPSUVBKL0osyCgGChiCOKWZKSB2tJJpkomRmZlxYqqhsWFymrmFrmWyRVqSWWqSiQFQ2CjVVCkWqL6ksiDVLzE3FaInILEkIy0zLyUzL13PvSgzxR1ktFJsLQBQSwECLQAUAAAICAAAmJ/rgCJgrMICAAD8BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAmJ/rCs8WoWsAAAB3AAAACQAkAAAAAAAAAAAAAAAPAwAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAMUDAAAAAA==
+    dataString: UEsDBBQAAAgIAACYn+vhbqDKxAIAAPwFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1v4jAQ/SvI5wUFSinsbRdauoe2qHTVw9KDiSfEwtiRPwq06n/fGSchgdVKSBnezHjemxn7k0ntCki9sXMrxYMRwL53GNnsW6dx3sOBb4xeyg+oY16l8DkF8RjzzL00iPcpzZkdeCvTH3qjKDhBMGiZGbu7FRuYGucdwhlXDtBljadsjdBnhx3w051QyhGtwQ1ZH2hNks4XmiloD7YV2h/3rqvg7iiaFF0GB50qvitAEPMmpz9IeuMqZzLujWOsRmFVWNIbUCWjlHQVL+aPRdT9zI+kWkiOGiMRkpyD3OSe+LYTn7LMga8aYPlxJi22qjyR/TRl/3bcbUtq71wFqjEaRkLlmQ//uLv96M6s2d3XZfsJlfC5TLdIMOXOt/rbhmfnvIPec7XlawWvOehHM7cmaIFObwOlBgeDWfP3pGyaQ7pt8JJqDdZ1Q9G0vJ5nPU0S8RXVH5YeipOQpDds0N8O3FKZ2PiqEnkqJO4IWBzbLxQUN8hVshAllpj/wjftVascd9I6j67zcIpd4IRAgE6hanyXAjTRW5tg6Sx2hwZNLg1+aqwG265QgObKHxd4or9cgQvf/7PuON26il3lqy/TRUqEm/gkuXAtzP40bRsUuLjNtfXnjYbgcrN/AJc/Ba+kbnWbHI/Y4KnRutzcttQ6bRlsxtNWmoeDDxZm3PNYDenghol2KrYwZuigFC1zFBAZoQD6vVGDc451VYTZo0FmCJ59I/1NkOL8irDr9XAwGl1x6F/10+xm3J2k42w9gvUwQXgA1yzeIamx3Vwtyn5VU8Lt0o0WjfelfhM7c8uLeGmF5fu5/NgZ10RKnZllagH0U3nCSSxYLIJPi7gVEmUuwXup416yzxVTJt2CWDUJq9jZ24O3/Awt5LvxhKzYNL6CK0bw6VLi7r5L2FP11YkWHgYKZwfiRSrY8YJcyRf7+gtQSwMEFAAACAgAAJif6wrPFqFrAAAAdwAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw1TPUM9JRUEovSizIKAYKGII4pZkpIHa0kmmSiZGZmXFiqqGxYXKauYWuZbJFWpJZapKJAVDYKNVUKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAACYn+vhbqDKxAIAAPwFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+sKzxahawAAAHcAAAAJACQAAAAAAAAAAAAAABEDAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAxwMAAAAA
     file_cachedStartup: {fileID: 0}
     cacheStartup: 0
   showNavGraphs: 0
@@ -3805,6 +3922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2038302582}
   - component: {fileID: 2038302583}
+  - component: {fileID: 2038302584}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -3840,6 +3958,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: f2b1c55ca2124974aa0be55a850ca3c5, type: 2}
+--- !u!114 &2038302584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038302581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91bbfa888f25144449e6dde9ecd7c891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkness: {fileID: 497295076}
+  volume: {fileID: 519420033}
+  rain: {fileID: 401304990}
+  stormPeace:
+    rainEmission: 0
+    saturation: 0
+    exposure: 0
+  stormIngoing:
+    rainEmission: 200
+    saturation: -75
+    exposure: -3
 --- !u!1 &2102231061
 GameObject:
   m_ObjectHideFlags: 0
