@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLightFuel : MonoBehaviour
 {
-    private Thunderstorm storm;
+    private Storm storm;
     [SerializeField]
     private LightScript _light;
     [SerializeField]
@@ -36,7 +36,7 @@ public class PlayerLightFuel : MonoBehaviour
     }
     private void Start()
     {
-        storm = FindObjectOfType<Thunderstorm>();
+        storm = FindObjectOfType<Storm>();
         ServiceManager.Instance.Get<OnStormChangedEvent>().Subscribe(HandleStormChanged);
     }
 
@@ -57,7 +57,7 @@ public class PlayerLightFuel : MonoBehaviour
     {
         thunderstormMultiplier = args.newState switch
         {
-            Thunderstorm.StormState.Ingoing => storm.thunderStormMultiplier,
+            Storm.StormState.Ingoing => storm.thunderStormMultiplier,
             _ => 1,
         };
     }

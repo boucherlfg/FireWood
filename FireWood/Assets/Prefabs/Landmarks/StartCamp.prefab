@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9133784ab97394f961610ad02a594b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeHelp: 30
+  timeBeforeHelp: 10
   prefab: {fileID: 6297081259211241688, guid: b1d6ff58747f7cf40bfbb8584fcabb3f, type: 3}
 --- !u!114 &3978759448597612129
 MonoBehaviour:
@@ -2323,7 +2323,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thunderstorm
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1725908507897518893, guid: 881d0d769890dba469adf2356866e242, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2347,11 +2348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.69
+      value: -6.04
       objectReference: {fileID: 0}
     - target: {fileID: 8317822031166420086, guid: 2478b4e593a8bf84f9af70ad6c220fca, type: 3}
       propertyPath: m_LocalPosition.z

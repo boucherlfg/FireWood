@@ -8,6 +8,7 @@ public class MoveScript : MonoBehaviour
     private float speed = 3;
     private Rigidbody2D _rigidBody;
     private InputSystem input;
+    private Joystick joystick;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,21 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var move = input.Move.normalized;
+        joystick = joystick ? joystick : FindObjectOfType<Joystick>();
+        Vector2 move;
+        if (!joystick)
+        {
+            move = input.Move.normalized;
+        }
+        else if (joystick.Direction.magnitude < joystick.DeadZone)
+        {
+            move = input.Move.normalized;
+        }
+        else 
+        {
+            move = joystick.Direction.normalized;
+        }
+
         _rigidBody.velocity = speed * (Vector3)move;
     }
 }

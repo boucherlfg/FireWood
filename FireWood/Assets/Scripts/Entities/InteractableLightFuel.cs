@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InteractableLightFuel : Interactable
 {
-    private Thunderstorm storm;
+    private Storm storm;
     [SerializeField]
     private GameObject refuelParticle;
     [SerializeField]
@@ -25,7 +25,7 @@ public class InteractableLightFuel : Interactable
     
     private void Start()
     {
-        storm = FindObjectOfType<Thunderstorm>();
+        storm = FindObjectOfType<Storm>();
         ServiceManager.Instance.Get<OnStormChangedEvent>().Subscribe(HandleStormChanged);
     }
    
@@ -55,7 +55,7 @@ public class InteractableLightFuel : Interactable
     {
         thunderstormMultiplier = args.newState switch
         {
-            Thunderstorm.StormState.Ingoing => storm.thunderStormMultiplier,
+            Storm.StormState.Ingoing => storm.thunderStormMultiplier,
             _ => 1,
         };
     }

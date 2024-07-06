@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286825540019852738}
-  - component: {fileID: 1725908507897518893}
+  - component: {fileID: 2480959696437638678}
   m_Layer: 0
   m_Name: Thunderstorm
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1725908507897518893
+--- !u!114 &2480959696437638678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6638721148861281188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c410d9c11bedb4ebf6850285f9852d, type: 3}
+  m_Script: {fileID: 11500000, guid: b0a56f0fcc5a9044ab89313c6f9568f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeFirstStorm: 60
-  intervalBetweenStorms: 30
-  stormDuration: 10
+  intervalBetweenStorms: 60
+  stormDuration: 30
+  transitionDuration: 10
   thunderStormMultiplier: 2

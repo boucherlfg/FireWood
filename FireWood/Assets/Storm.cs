@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Thunderstorm : MonoBehaviour
+public class Storm : MonoBehaviour
 {
     public enum StormState { First = 0, Ingoing = 1, Peace = 2, Transition = 3 };
 
@@ -13,7 +13,7 @@ public class Thunderstorm : MonoBehaviour
     public float stormDuration = 10;
     public float transitionDuration = 3;
     public float thunderStormMultiplier = 2;
-
+    
     private float counter = 0;
     private void OnValidate()
     {

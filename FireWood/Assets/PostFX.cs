@@ -21,7 +21,7 @@ public class PostFX : MonoBehaviour
     public Effects stormPeace;
     public Effects stormIngoing;
 
-    private Thunderstorm storm;
+    private Storm storm;
     private Coroutine coroutine;
 
     // Start is called before the first frame update
@@ -43,15 +43,15 @@ public class PostFX : MonoBehaviour
             coroutine = null;
         }
 
-        if (args.newState != Thunderstorm.StormState.Transition)
+        if (args.newState != Storm.StormState.Transition)
         {
             return;
         }
-        if ((args.lastState & (Thunderstorm.StormState)1) == 0)
+        if ((args.lastState & (Storm.StormState)1) == 0)
         {
             coroutine = StartCoroutine(StormCoroutine(stormIngoing));
         }
-        else if (args.lastState == Thunderstorm.StormState.Ingoing)
+        else if (args.lastState == Storm.StormState.Ingoing)
         {
             coroutine = StartCoroutine(StormCoroutine(stormPeace));
         }
@@ -59,7 +59,7 @@ public class PostFX : MonoBehaviour
         IEnumerator StormCoroutine(Effects effect)
         {
             var rain = this.rain.emission;
-            storm = storm ? storm : FindObjectOfType<Thunderstorm>();
+            storm = storm ? storm : FindObjectOfType<Storm>();
             if (!volume.profile.TryGet(out ColorAdjustments colors)) goto end;
 
             var startRain = rain.rateOverTime.constant;
@@ -73,34 +73,30 @@ public class PostFX : MonoBehaviour
             var rainFloat = startRain;
             while (true)
             {
-                var isExposureDone = ChangeExposure();
-                var isSaturationDone = ChangeSaturation();
-                var isRainDone = ChangeRain();
+                ChangeExposure();
+                ChangeSaturation();
+                ChangeRain();
 
-                if (isExposureDone && isSaturationDone) break;
                 yield return null;
             }
 
-            bool ChangeExposure()
+            void ChangeExposure()
             {
                 var delta = targetExposure - startExposure;
                 colors.postExposure.value += delta * Time.deltaTime / storm.transitionDuration;
-                return false;
             }
 
-            bool ChangeSaturation()
+            void ChangeSaturation()
             {
                 var delta = targetSaturation - startSaturation;
                 colors.saturation.value += delta * Time.deltaTime / storm.transitionDuration;
-                return false;
             }
 
-            bool ChangeRain()
+            void ChangeRain()
             {
                 var delta = targetRain - startRain;
                 rainFloat += delta * Time.deltaTime / storm.transitionDuration;
                 rain.rateOverTime = (int)rainFloat;
-                return false;
             }
 
             end:;

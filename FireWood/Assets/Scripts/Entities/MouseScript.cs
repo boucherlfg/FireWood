@@ -46,7 +46,7 @@ public class MouseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (disappearCounter < timeBeforeDisappearing)
+        if (disappearCounter >= timeBeforeDisappearing)
         {
             this.state = MouseState.Disappear;
         }
