@@ -190,17 +190,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""dd9814f7-37fa-4254-a058-f9e80bfeada3"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Act"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""a5b7e6d5-7575-414c-b242-713079d0950a"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -223,8 +212,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""16857f81-7f0e-4bf8-bea2-6a82bcd8839b"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""id"": ""dd9814f7-37fa-4254-a058-f9e80bfeada3"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

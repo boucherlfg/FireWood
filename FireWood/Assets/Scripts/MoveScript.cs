@@ -20,20 +20,12 @@ public class MoveScript : MonoBehaviour
     void Update()
     {
         joystick = joystick ? joystick : FindObjectOfType<Joystick>();
-        Vector2 move;
-        if (!joystick)
+        Vector2 move = input.Move.normalized;
+        if (joystick)
         {
-            move = input.Move.normalized;
+            move += joystick.Direction.normalized;   
         }
-        else if (joystick.Direction.magnitude < joystick.DeadZone)
-        {
-            move = input.Move.normalized;
-        }
-        else 
-        {
-            move = joystick.Direction.normalized;
-        }
-
+        move = move.normalized;
         _rigidBody.velocity = speed * (Vector3)move;
     }
 }

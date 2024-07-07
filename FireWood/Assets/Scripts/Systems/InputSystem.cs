@@ -28,6 +28,7 @@ public class InputSystem
 
     private void Act_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
+        Debug.Log(obj.ToString());
         Acted?.Invoke();
     }
 }
