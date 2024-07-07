@@ -3733,8 +3733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9348343cf8fce5f49bcff5aa3849393f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInDuration: 3
-  stayDuration: 3
+  fadeInDuration: 2
+  stayDuration: 2
   fadeOutDuration: 3
   flicker: 0.1
   canvasGroup: {fileID: 1880578220}
@@ -4086,6 +4086,8 @@ GameObject:
   - component: {fileID: 2038302582}
   - component: {fileID: 2038302583}
   - component: {fileID: 2038302584}
+  - component: {fileID: 2038302585}
+  - component: {fileID: 2038302586}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -4144,6 +4146,43 @@ MonoBehaviour:
     rainEmission: 200
     saturation: -75
     exposure: -3
+--- !u!114 &2038302585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038302581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4be5d41c84f3f947b89404754964c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - {fileID: 5215795543683196646, guid: 2b6e5b3314243b84186c9d1ff8ce5411, type: 3}
+  - {fileID: 5215795543683196646, guid: 0036faac882a91049a8a325959d4f98a, type: 3}
+  - {fileID: 5215795543683196646, guid: 462bf03ee132aab4383a86d3b0170c72, type: 3}
+  - {fileID: 5215795543683196646, guid: ffdc082d069bec14496a94d57af750ad, type: 3}
+  - {fileID: 5215795543683196646, guid: 3e94a9979f5bb9d4590f00f96dc09d47, type: 3}
+  - {fileID: 5215795543683196646, guid: 1f722b2640f6f674cbd6b5f10b012740, type: 3}
+--- !u!114 &2038302586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038302581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc94ad6e40392743bbdedf172dc1c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - {fileID: 5215795543683196646, guid: e06610d5fb08f034898d775a451a82c9, type: 3}
+  - {fileID: 5215795543683196646, guid: a904b106e81ffe548a6761a3e99a4bd8, type: 3}
+  - {fileID: 5215795543683196646, guid: 51e4ef5a83a268d408a899f38b3ca0b5, type: 3}
+  - {fileID: 5215795543683196646, guid: a98f29322592b4346b8bfe4e7ed51e9b, type: 3}
+  - {fileID: 5215795543683196646, guid: c273afd2815a05648a5db77609f175c0, type: 3}
 --- !u!1 &2102231061
 GameObject:
   m_ObjectHideFlags: 0
