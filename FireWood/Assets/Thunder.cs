@@ -29,7 +29,11 @@ public class Thunder : MonoBehaviour
         var storm = ServiceManager.Instance.Get<OnStormChangedEvent>();
         storm.Subscribe(HandleStormChanged);
     }
-
+    private void OnDestroy()
+    {
+        var storm = ServiceManager.Instance.Get<OnStormChangedEvent>();
+        storm.Unsubscribe(HandleStormChanged);
+    }
     void HandleStormChanged(StormChangedArgs args) 
     {
         isActive = args.newState == Storm.StormState.Ingoing;
