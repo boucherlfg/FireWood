@@ -44,6 +44,10 @@ public class Thunder : MonoBehaviour
         {
             SetNextThunder();
         }
+        else
+        {
+            darkness.gameObject.SetActive(true);
+        }
     }
 
     void SetNextThunder()
