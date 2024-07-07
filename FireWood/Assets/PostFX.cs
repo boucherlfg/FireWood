@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -28,6 +29,13 @@ public class PostFX : MonoBehaviour
     void Start()
     {
         ServiceManager.Instance.Get<OnStormChangedEvent>().Subscribe(HandleStormChange);
+        ServiceManager.Instance.Get<OnEndGameChanged>().Subscribe(HandleEndGameChanged);
+    }
+
+    private void HandleEndGameChanged(EndGameArgs args)
+    {
+        volume.profile.TryGet(out Vignette vignette);
+        vignette.intensity.value = args.completion;
     }
 
     private void OnDestroy()

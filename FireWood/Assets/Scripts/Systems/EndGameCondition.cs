@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class EndGameCondition : MonoBehaviour
 {
+    private Volume volume;
     private PlayerScript player;
     public enum EndGameState
     {
@@ -15,7 +17,20 @@ public class EndGameCondition : MonoBehaviour
         Dead,
         End
     }
-    private EndGameState state;
+    private EndGameState _state;
+    private EndGameState State
+    {
+        get => _state;
+        set
+        {
+            var oldState = _state;
+            _state = value;
+            if (oldState != _state)
+            {
+                ServiceManager.Instance.Get<OnEndGameChanged>().Invoke(new EndGameArgs(_state, counter / bufferTime));
+            }
+        }
+    }
     [SerializeField]
     private float bufferTime = 10;
 
@@ -23,7 +38,7 @@ public class EndGameCondition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (state)
+        switch (State)
         {
             case EndGameState.Safe:
                 Safe();
@@ -41,20 +56,22 @@ public class EndGameCondition : MonoBehaviour
     {
         player = player ? player : FindObjectOfType<PlayerScript>();
         counter = 0;
-        if (!player.Light.IsLit) state = EndGameState.Danger;
+        if (!player.Light.IsLit) State = EndGameState.Danger;
     }
     void Danger()
     {
         player = player ? player : FindObjectOfType<PlayerScript>();
         counter += Time.deltaTime;
-        if (player.Light.IsLit) state = EndGameState.Safe;
-        else if (counter >= bufferTime) state = EndGameState.Dead;
+        ServiceManager.Instance.Get<OnEndGameChanged>().Invoke(new(_state, counter / bufferTime));
+
+        if (player.Light.IsLit) State = EndGameState.Safe;
+        else if (counter >= bufferTime) State = EndGameState.Dead;
     }
     void Dead()
     {
         player = player ? player : FindObjectOfType<PlayerScript>();
         player.gameObject.SetActive(false);
         ServiceManager.Instance.Get<OnEndOfGame>().Invoke();
-        state = EndGameState.End;
+        State = EndGameState.End;
     }
 }
