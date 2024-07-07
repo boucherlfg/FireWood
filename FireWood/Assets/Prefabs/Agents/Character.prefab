@@ -188,7 +188,6 @@ GameObject:
   - component: {fileID: 8255974568654456981}
   - component: {fileID: 2837272957976837071}
   - component: {fileID: 2159260101276199778}
-  - component: {fileID: 5386642575905050097}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -430,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6678d1b13e5115e4196edb48c1dc2ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!114 &8255974568654456981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,54 +501,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 1.5
---- !u!331 &5386642575905050097
-SpriteMask:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7929158330802656468}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -602958524, guid: 95a3fd540f4a0d747aa4b0713d867f44, type: 3}
-  m_MaskAlphaCutoff: 0.2
-  m_FrontSortingLayerID: -781436667
-  m_BackSortingLayerID: -781436667
-  m_FrontSortingLayer: 10
-  m_BackSortingLayer: 10
-  m_FrontSortingOrder: 5
-  m_BackSortingOrder: -5
-  m_IsCustomRangeActive: 1
-  m_SpriteSortPoint: 0

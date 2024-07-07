@@ -40,6 +40,7 @@ public class PostFX : MonoBehaviour
 
     private void OnDestroy()
     {
+        ServiceManager.Instance.Get<OnEndGameChanged>().Unsubscribe(HandleEndGameChanged);
         ServiceManager.Instance.Get<OnStormChangedEvent>().Unsubscribe(HandleStormChange);
     }
 

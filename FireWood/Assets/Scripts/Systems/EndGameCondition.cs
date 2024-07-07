@@ -1,14 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 
 public class EndGameCondition : MonoBehaviour
 {
-    private Volume volume;
     private PlayerScript player;
     public enum EndGameState
     {
@@ -55,6 +49,7 @@ public class EndGameCondition : MonoBehaviour
     void Safe()
     {
         player = player ? player : FindObjectOfType<PlayerScript>();
+        ServiceManager.Instance.Get<OnEndGameChanged>().Invoke(new(_state, 0));
         counter = 0;
         if (!player.Light.IsLit) State = EndGameState.Danger;
     }
