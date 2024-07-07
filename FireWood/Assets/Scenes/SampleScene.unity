@@ -3733,9 +3733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9348343cf8fce5f49bcff5aa3849393f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInDuration: 2
-  stayDuration: 2
-  fadeOutDuration: 3
+  fadeInDuration: 1
+  stayDuration: 3
+  fadeOutDuration: 1
   flicker: 0.1
   canvasGroup: {fileID: 1880578220}
   image: {fileID: 1801390462}
