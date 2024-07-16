@@ -1,0 +1,1 @@
+public class OnStormChangedEvent : BaseEvent<Storm.StormState> { }

@@ -2320,7 +2320,27 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: firstTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: maxPeaceTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: minPeaceTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
       propertyPath: stormDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: maxIngoingTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
+      propertyPath: minIngoingTime
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2480959696437638678, guid: 881d0d769890dba469adf2356866e242, type: 3}
@@ -2478,6 +2498,10 @@ PrefabInstance:
     - target: {fileID: 8255974568654456981, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255974568654456981, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}
+      propertyPath: followSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6158446685190473592, guid: 80c2034a7e3af1341a1c3d7b8354a452, type: 3}

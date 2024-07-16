@@ -12,10 +12,10 @@ public class StormMessages : MonoBehaviour
         ServiceManager.Instance.Get<OnStormChangedEvent>().Subscribe(HandleStormChanged);
     }
 
-    private void HandleStormChanged(StormChangedArgs args)
+    private void HandleStormChanged(Storm.StormState state)
     {
-        if (args.newState != Storm.StormState.Transition) return;
-        if ((args.lastState & (Storm.StormState)1) != 0) return;
+        if (state < Storm.StormState.TransitionToIngoing) return;
+        if (state == Storm.StormState.TransitionToPeace) return;
 
         var randomMessange = messages.GetRandom();
         ServiceManager.Instance.Get<OnNotification>().Invoke(randomMessange);
